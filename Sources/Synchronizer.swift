@@ -13,7 +13,7 @@ public struct Synchronizer: Syncable {
         let command = "/usr/bin/rsync"
         let arguments = [
             "-azP",
-            excludedFiles.flatMap({"--exclude = '\($0)'"}).joined(separator: " "),
+            excludedFiles.flatMap({"--exclude=\"\($0)\""}).joined(separator: " "),
             source,
             destination
         ]
